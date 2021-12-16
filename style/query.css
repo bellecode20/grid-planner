@@ -1,0 +1,49 @@
+/* 화면 작아지면 그냥 날짜랑 투두리스트만 보이게 */
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 75em) {
+  .todo {
+    font-size: 2rem;
+  }
+  .todo__form__input {
+    font-size: 1.8rem;
+  }
+}
+
+/* 1024px */
+@media (max-width: 64em) {
+  .container {
+    padding: 2rem 2.5rem 4rem 2.5rem;
+  }
+}
+
+/* 768px */
+@media (max-width: 48em) {
+  .todo {
+    font-size: 1.8rem;
+  }
+  .container {
+    width: 90vw;
+    padding: 2rem 3rem 5rem 3rem;
+  }
+  .hour {
+    font-size: 1rem;
+  }
+}
+
+/* 576px */
+@media (max-width: 36em) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    height: 90vh;
+    padding: 2rem 3rem 5rem 3rem;
+    row-gap: 1rem;
+  }
+  .date {
+    font-size: 2rem;
+  }
+  .time-table {
+    display: none;
+  }
+}
