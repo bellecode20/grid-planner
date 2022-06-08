@@ -20,6 +20,8 @@ timeTable.addEventListener("selectstart", (e) => {
 // color 클릭 => min 클릭 => 색칠
 for (let a = 0; a < colors.length; a++) {
   colors[a].addEventListener("click", function () {
+    isSaved = false;
+    showSaveBtn();
     let pickedColor = this.getAttribute("data-color");
     let slicePickedColor = pickedColor.substr(1, 6);
 
@@ -31,6 +33,8 @@ for (let a = 0; a < colors.length; a++) {
           i.classList.add(slicePickedColor);
         }
         if (e.buttons == 2) {
+          isSaved = false;
+          showSaveBtn();
           removeColor(i);
         }
       };
@@ -41,6 +45,8 @@ for (let a = 0; a < colors.length; a++) {
           i.classList.add(slicePickedColor);
         }
         if (e.buttons == 2) {
+          isSaved = false;
+          showSaveBtn();
           removeColor(i);
         }
       };
@@ -49,10 +55,8 @@ for (let a = 0; a < colors.length; a++) {
     //todo 클릭하면 색칠
     let subjects = document.getElementsByClassName("list__subject");
     Array.from(subjects).forEach(function (subject) {
-      console.log(subjects);
       subject.onclick = function (e) {
         subject.style.color = pickedColor;
-        console.log(e);
       };
       subject.oncontextmenu = function (e) {
         subject.style.color = "#594c6d";

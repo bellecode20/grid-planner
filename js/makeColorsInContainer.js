@@ -17,4 +17,3 @@ for (let x of colorValues) {
   div.setAttribute("data-color", x);
   colorContainer.appendChild(div);
 }
-console.log(colorContainer);

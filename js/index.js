@@ -2,8 +2,11 @@ const todoInput = document.querySelector("#input");
 const form = document.querySelector("#todo__form");
 const todoItemsList = document.querySelector("#todo__lists");
 let notYetSavedTodos = [];
+let isSaved = true;
 form.addEventListener("submit", function (e) {
   e.preventDefault();
+  isSaved = false;
+  showSaveBtn();
   updateNotYetSavedTodos(todoInput.value);
 });
 
@@ -19,8 +22,11 @@ document.querySelector("#save--btn").addEventListener("click", function () {
   saveTimeTable();
   saveTodoAndColor();
   notYetSavedTodos = [];
+  isSaved = true;
+  showSaveBtn();
 });
 
 // document.querySelector("#save--btn").style.display = "none";
-console.log(notYetSavedTodos);
+showSaveBtn();
 loadAndRenderTodos();
+console.log(isSaved);

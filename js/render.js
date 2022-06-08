@@ -35,6 +35,9 @@ function renderNotYetSavedTodos(todos) {
   });
 }
 function deleteTodo(thisTodo, dataKey) {
+  isSaved = false;
+  showSaveBtn();
+  console.log(isSaved);
   todoItemsList.removeChild(thisTodo);
   // 아직 localStorage에 저장되지 않은 todo에서도 제거한다.
   notYetSavedTodos = notYetSavedTodos.filter((el) => {
@@ -44,4 +47,9 @@ function deleteTodo(thisTodo, dataKey) {
 function reprint() {
   timeTable.innerHTML = localStorage.getItem("innerTimeTable");
   container.appendChild(timeTable);
+}
+function showSaveBtn() {
+  if (isSaved) {
+    document.querySelector("#save--btn").style.display = "none";
+  } else document.querySelector("#save--btn").style.display = "";
 }
