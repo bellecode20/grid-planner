@@ -1,6 +1,7 @@
 ///// Timetable 클릭 가능
 let min = document.getElementsByClassName("min");
 let colors = document.getElementsByClassName("color--container__color");
+const todo = document.querySelector(".todo");
 
 //Timetable 드래그, 우클릭, 블럭선택 막기
 const timeTable = document.querySelector(".time-table");
@@ -61,7 +62,6 @@ for (let a = 0; a < colors.length; a++) {
   });
 }
 
-const todo = document.querySelector(".todo");
 todo.oncontextmenu = function (e) {
   e.preventDefault();
 };
@@ -79,38 +79,4 @@ function removeColor(i) {
     "b196fd",
     "adb5bd"
   );
-}
-// timetable에 색깔 입힌 것 저장하기
-if (localStorage.getItem("innerTimeTable") !== null) {
-  reprint();
-}
-
-document.querySelector(".save--btn").addEventListener("click", function () {
-  saveTimeTable();
-  saveTodoAndColor();
-});
-
-function saveTimeTable() {
-  let innerTimeTable = timeTable.innerHTML;
-  localStorage.setItem("innerTimeTable", innerTimeTable);
-}
-
-function reprint() {
-  timeTable.innerHTML = localStorage.getItem("innerTimeTable");
-  container.appendChild(timeTable);
-}
-
-// todolist에 색깔 입힌 것 저장하기
-if (localStorage.getItem("todoAndColor") !== null) {
-  reprintTodoColor();
-}
-
-function saveTodoAndColor() {
-  let todoAndColor = todoItemsList.innerHTML;
-  localStorage.setItem("todoAndColor", todoAndColor);
-}
-
-function reprintTodoColor() {
-  todoItemsList.innerHTML = localStorage.getItem("todoAndColor");
-  document.querySelector(".todo").appendChild(todoItemsList);
 }
