@@ -22,11 +22,10 @@ function makeMin(oddOrEven) {
 function makeMinLines() {
   for (let i = 1; i <= 18; i++) {
     for (let k = 1; k <= 7; k++) {
-      if (k % 2 == 1) makeMin(oddMin);
-      else if (k % 2 == 0) makeMin(evenMin);
-      else if (k % 7 == 0) {
+      if (k == 7) {
         makeTimeLine(timeLineArr.shift());
-      }
+      } else if (k % 2 == 1) makeMin(oddMin);
+      else if (k % 2 == 0) makeMin(evenMin);
     }
   }
 }
