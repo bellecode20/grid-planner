@@ -35,15 +35,43 @@
   .container {
     display: flex;
     flex-direction: column;
-    width: 90vw;
-    height: 90vh;
-    padding: 2rem 3rem 5rem 3rem;
+    width: 75vw;
+    height: 70vh;
+    max-height: 60rem;
+    padding: 2rem 2rem 6rem 2rem;
     row-gap: 1rem;
   }
   .date {
     font-size: 2rem;
+    padding: 1rem;
+  }
+  .todo {
+    height: 92%;
+  }
+  .todo__lists {
+    height: calc(90% - 1rem);
+    padding: 2rem;
   }
   .time-table {
     display: none;
+  }
+  .color--container {
+    padding: 0 2rem;
+    width: 95%;
+    overflow-x: auto;
+  }
+  .color--container__color {
+    min-width: 2.5rem;
+  }
+  .todo__form__input {
+    min-height: 3rem;
+    font-size: 1rem;
+  }
+  .todo__form__btn {
+    min-width: 3rem;
+    min-height: 3rem;
+  }
+  .save--btn {
+    font-size: 1.8rem;
   }
 }
