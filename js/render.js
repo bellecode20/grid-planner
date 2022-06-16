@@ -37,7 +37,6 @@ function renderNotYetSavedTodos(todos) {
 function deleteTodo(thisTodo, dataKey) {
   isSaved = false;
   showSaveBtn();
-  console.log(isSaved);
   todoItemsList.removeChild(thisTodo);
   // 아직 localStorage에 저장되지 않은 todo에서도 제거한다.
   notYetSavedTodos = notYetSavedTodos.filter((el) => {

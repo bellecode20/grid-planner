@@ -29,4 +29,3 @@ document.querySelector("#save--btn").addEventListener("click", function () {
 // document.querySelector("#save--btn").style.display = "none";
 showSaveBtn();
 loadAndRenderTodos();
-console.log(isSaved);

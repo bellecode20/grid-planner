@@ -29,8 +29,7 @@ for (let a = 0; a < colors.length; a++) {
     Array.from(min).forEach(function (i) {
       i.onmouseenter = function (e) {
         if (e.buttons == 1) {
-          removeColor(i);
-          i.classList.add(slicePickedColor);
+          i.style.backgroundColor = `#${slicePickedColor}`;
         }
         if (e.buttons == 2) {
           isSaved = false;
@@ -41,8 +40,7 @@ for (let a = 0; a < colors.length; a++) {
       // min들 중 첫번째로 눌리는 item
       i.onmousedown = function (e) {
         if (i.onmouseenter) {
-          removeColor(i);
-          i.classList.add(slicePickedColor);
+          i.style.backgroundColor = `#${slicePickedColor}`;
         }
         if (e.buttons == 2) {
           isSaved = false;
@@ -71,16 +69,11 @@ todo.oncontextmenu = function (e) {
 };
 
 function removeColor(i) {
-  i.classList.remove(
-    "ffe3e2",
-    "fea9a4",
-    "ffc079",
-    "fdea9b",
-    "d8f5a1",
-    "b2f3bd",
-    "a8d8fc",
-    "bbc8ff",
-    "b196fd",
-    "adb5bd"
-  );
+  //짝수번째인 min칸인 경우이다.
+  if (i.classList.contains("min--color")) {
+    i.style.backgroundColor = "#dddddd";
+  } else {
+    //홀수번째인 min칸인 경우이다.
+    i.style.backgroundColor = "#d8d5de";
+  }
 }

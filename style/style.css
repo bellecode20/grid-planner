@@ -53,7 +53,6 @@ body {
   position: relative;
   border: 3px solid #000000;
   width: 70vw;
-  /* height: 75vh; */
   max-width: 85rem;
   max-height: 86rem;
   border-radius: 15px;
@@ -79,37 +78,6 @@ body {
   height: 2.5rem;
   border-radius: 50%;
   cursor: pointer;
-}
-
-.color--container div:nth-child(1) {
-  background-color: #ffe3e2;
-}
-.color--container div:nth-child(2) {
-  background-color: #fea9a4;
-}
-.color--container div:nth-child(3) {
-  background-color: #ffc079;
-}
-.color--container div:nth-child(4) {
-  background-color: #fdea9b;
-}
-.color--container div:nth-child(5) {
-  background-color: #d8f5a1;
-}
-.color--container div:nth-child(6) {
-  background-color: #b2f3bd;
-}
-.color--container div:nth-child(7) {
-  background-color: #a8d8fc;
-}
-.color--container div:nth-child(8) {
-  background-color: #bbc8ff;
-}
-.color--container div:nth-child(9) {
-  background-color: #b196fd;
-}
-.color--container div:nth-child(10) {
-  background-color: #adb5bd;
 }
 
 /* Date */
@@ -145,14 +113,6 @@ body {
   cursor: pointer;
   padding: 1rem 0;
 }
-/* .icon-palette {
-  padding-top: 5px;
-  padding-right: 5px;
-  cursor: pointer;
-  color: #594c6d8e;
-  font-size: 1.8rem;
-  vertical-align: sub;
-} */
 .close--btn {
   padding: 1px;
   cursor: pointer;
@@ -187,7 +147,6 @@ body {
   border-radius: 13px;
   border: 3px solid #000000;
   font-family: "Cafe24Ssurround";
-  /* font-size: 2vw; */
   font-size: 2.4rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -222,14 +181,11 @@ body {
 }
 .mins__container {
   flex-basis: 12.5%;
-  /* min-width: 14.25%; */
-  /* min-width: calc((100%-5rem) / 7); */
 }
 .mins__container__min {
   padding-top: 100%;
   position: relative;
   width: 100%;
-  /* border: 1px solid black; */
 }
 .min {
   height: 100%;
@@ -260,38 +216,6 @@ body {
 }
 .min--color--added {
   background-color: #7165e3;
-}
-
-/* 동적으로 추가한 color 클래스 */
-.ffe3e2 {
-  background-color: #ffe3e2;
-}
-.fea9a4 {
-  background-color: #fea9a4;
-}
-.ffc079 {
-  background-color: #ffc079;
-}
-.fdea9b {
-  background-color: #fdea9b;
-}
-.d8f5a1 {
-  background-color: #d8f5a1;
-}
-.b2f3bd {
-  background-color: #b2f3bd;
-}
-.a8d8fc {
-  background-color: #a8d8fc;
-}
-.bbc8ff {
-  background-color: #bbc8ff;
-}
-.b196fd {
-  background-color: #b196fd;
-}
-.adb5bd {
-  background-color: #adb5bd;
 }
 
 .save--btn {
