@@ -1,6 +1,7 @@
 const todoInput = document.querySelector("#input");
 const form = document.querySelector("#todo__form");
 const todoItemsList = document.querySelector("#todo__lists");
+let savedTodos = localStorage.getItem("todoAndColor"); // localStorage에 저장된 todo 값을 복사한다.
 let notYetSavedTodos = [];
 let isSaved = true;
 form.addEventListener("submit", function (e) {
@@ -26,6 +27,6 @@ document.querySelector("#save--btn").addEventListener("click", function () {
   showSaveBtn();
 });
 
-// document.querySelector("#save--btn").style.display = "none";
 showSaveBtn();
-loadAndRenderTodos();
+renderTodos();
+renderTimetableFromLS();

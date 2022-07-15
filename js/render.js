@@ -1,17 +1,11 @@
-function loadAndRenderTodos(notYetSavedTodos) {
-  //화면에 렌더링돼있는 notYetSavedTodos를 지워서 중복을 피한다.
+function renderTodos(notYetSavedTodos) {
   todoItemsList.innerHTML = "";
-  // localStorage에 저장된 todo가 있다면 불러온다. 새로고침된 경우이다.
+  // localStorage에 저장됐었던 todo, 저장되지 않은 todo로 나누어서 렌더링한다.
   if (localStorage.getItem("todoAndColor") !== null) {
-    todoItemsList.innerHTML = localStorage.getItem("todoAndColor");
+    todoItemsList.innerHTML = savedTodos;
   }
-  // 아직 localStorage에 저장되지 않은 todo들을 렌더링한다.
   if (notYetSavedTodos) {
     renderNotYetSavedTodos(notYetSavedTodos);
-  }
-  // localStorage에서 timetable에 색깔 입힌 것 불러온다.
-  if (localStorage.getItem("innerTimeTable") !== null) {
-    reprint();
   }
 }
 function updateNotYetSavedTodos(item) {
@@ -22,7 +16,7 @@ function updateNotYetSavedTodos(item) {
     };
     notYetSavedTodos.push(todo);
     todoInput.value = "";
-    loadAndRenderTodos(notYetSavedTodos);
+    renderTodos(notYetSavedTodos);
   }
 }
 function renderNotYetSavedTodos(todos) {
@@ -38,14 +32,18 @@ function deleteTodo(thisTodo, dataKey) {
   isSaved = false;
   showSaveBtn();
   todoItemsList.removeChild(thisTodo);
-  // 아직 localStorage에 저장되지 않은 todo에서도 제거한다.
+  // todo 목록을 업데이트 한다.
+  savedTodos = todoItemsList.innerHTML;
+  // 저장되지 않은 todo 목록도 업데이트한다.
   notYetSavedTodos = notYetSavedTodos.filter((el) => {
     return el.id != dataKey;
   });
 }
-function reprint() {
-  timeTable.innerHTML = localStorage.getItem("innerTimeTable");
-  container.appendChild(timeTable);
+function renderTimetableFromLS() {
+  if (localStorage.getItem("innerTimeTable") !== null) {
+    timeTable.innerHTML = localStorage.getItem("innerTimeTable");
+    container.appendChild(timeTable);
+  }
 }
 function showSaveBtn() {
   if (isSaved) {
